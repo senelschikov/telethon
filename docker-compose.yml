@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+
+  telethon1:
+    build: .
+    container_name: telethon1
+    restart: unless-stopped
+    environment:
+      - API_ID=5840284
+      - API_HASH=0fd46cfa7c4c16a9447455f0ee7a4d3a
+      - NUMBER=+35796914180
+    volumes:
+      - ./session_file:/session_file
+  telethon2:
+    build: .
+    container_name: telethon2
+    restart: unless-stopped
+    environment:
+      - API_ID=4395964
+      - API_HASH=727921cfc0319bbdf71bb904a80da5f0
+      - NUMBER=+35796914198
+    volumes:
+      - ./session_file:/session_file
+
+#  telethon3:
+#    build: .
+#    container_name: telethon3
+#    restart: unless-stopped
+#    environment:
+#      - API_ID=4945446
+#      - API_HASH=e164274724515209ba2d5e8934f8c42e
+#      - NUMBER=+35799137636
+#    volumes:
+#      - ./telethon3_session_file.session:/session_file.session
